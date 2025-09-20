@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Venturiq Group</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    
+    header .logo span {
+      font-size: 22px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    header nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    header nav a:hover,
+    header nav a.active {
+      font-weight: bold;
+    }
+
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .underline {
+      width: 60px;
+      height: 4px;
+      background: orange;
+      margin: 0.5rem auto;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    .text-img-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .text-img-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .text-img-row img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 4px;
+    }
+
+    .text {
+      flex: 1;
+    }
+
+    .product ul {
+      list-style: square inside;
+      padding-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f7f7f7;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @media screen and (max-width: 768px) {
+      .text-img-row {
+        flex-direction: column;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+    }
+  
+    .dropdown {
+      position: relative;
+    }
+  
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      z-index: 1000;
+    }
+  
+    .dropdown-menu li {
+      border-bottom: 1px solid #eee;
+    }
+  
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+  
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      white-space: nowrap;
+    }
+  
+    .dropdown-menu a:hover {
+      background: #f8f9fa;
+    }
+  
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    </style>
+</head>
+<body>
+   <header>
+    <div class="logo">
+      <!-- Replace this logo link with your own logo file (e.g., logo.png in same folder) -->
+      <img src="image/logo.jpeg" alt="Venturiq Logo">
+      <div class="Venturiq"></div>
+      <span>Venturiq</span>
+    </div>
+    <nav>
+      <a href="sample.html">Home</a>
+      <a href="#" class="active">Venturiq Group</a>
+      <a href="technology.html">Technology Partners</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="gallery.html" class="dropdown">Gallery</a>
+      <ul class="dropdown-menu">
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="#">Videos</a></li>
+      </ul>
+      <a href="#">Career</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Venturiq Group</h1>
+      <div class="underline"></div>
+    </section>
+
+    <!-- Overview -->
+    <section class="overview">
+      <div class="text-img-row">
+        <img src="image/overview.jpg" alt="Overview Image" />
+        <div class="text">
+          <h2>Overview</h2>
+          <p>
+            Venturiq group has always focused on providing its customers with their demands and needs. The world is now developing towards greener fuels and Venturiq group is walking the same path hand in hand.
+            Clean air is an essential component for ensuring healthy lives and ecosystem. The rapid expansion of the economy and migration of population from rural India to the urban part of the country is a major contributing factor for the current deterioration of ambient air quality, particularly in Metropolitan Cities in the country.
+            Natural Gas and Renewables Energy have been identified as a cleaner source of energy to combat such poor air quality.
+            <br /><br />
+            Natural gas burns cleaner than other fossil fuels, producing half the carbon dioxide as coal and about a third less than oil. It also emits fewer amounts of toxic chemicals like nitrogen oxides and sulphur dioxide. Further because of its higher fuel efficiency, cost-effectiveness, reliable and safe supply arrangement Bio CNG is one of the preferred sources of energy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project -->
+    <section class="project">
+      
+      <h2>Our Project</h2>
+      <div class="text-img-row reverse">
+        <img src="image/our.png" alt="Project Map Image"/>
+        <div class="text">
+          <p>
+            Venturiq group is a company engaged in establishing BIO CNG plants on Turnkey basis. M/S Venturiq Biofuels Pvt. Ltd. (VBPL) has developed a concept of a cluster consisting a self-sufficient production of CBG. This sector consists number of activities connected from the plantation to the Dispensing stations of CBG.
+            <br/><br/>
+            The CBG plant is developed and established by M/s Venturiq Biofuels Pvt. Ltd. (VBPL) Who is in tie up with KIS Group and they have patented technology with utilization of minimum raw material and maximum yield of BIO CNG. This BIO CNG plant is the part of the cluster. This tie up is in the business of generating Bio Methane from Agro Residue and other Bio Mass, and in the business of gaseous and other fuels in general.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product -->
+    <section class="product">
+      <div class="text-img-row">
+        <img src="image/product.jpg" alt="CBG Fuel" />
+        <div class="text">
+          <h2>Our Product</h2>
+          <ul>
+            <p>1.Compressed Bio Gas<br>
+            Description:
+CBG (Compressed Bio-Gas), also known as Bio-CNG, is a renewable, eco-friendly fuel produced through the anaerobic digestion of organic waste such as agricultural residue, cattle dung, food waste, and municipal solid waste.
+Advantages:<li>
+Reduces dependency on fossil fuels</li>
+<li>Lowers greenhouse gas emissions</li>
+<li>Eligible under the SATAT (Sustainable Alternative Towards Affordable Transportation) initiative</li>
+<li>Qualifies for carbon credits and RE (Renewable Energy) certificates</li>
+</p><br>
+
+            <p>2.By-Products of CBG Production<br>
+a. Fermented Organic Manure (FOM) / Bio-Slurry
+Description: Nutrient-rich residue from the anaerobic digestion process.
+Forms:
+<li>Liquid Bio-Slurry</li>
+<li>Dried Bio-Manure (Solid form)</li>
+Uses:
+<li>Organic fertilizer for agriculture</li>
+<li>Soil conditioner to improve fertility and water retention</li>
+<li>Can be further enriched and pelletized for commercial sale</li>
+b. CO₂ (Carbon Dioxide)
+Description: CO₂ is separated during the biogas purification process.
+Uses:
+Note: CO₂ can be captured and monetized with proper purification systems.</p>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+     <!-- Business Associates -->
+    <section class="associates">
+      <div class="text-img-row reverse">
+        <img src="image/Business-Associate.jpg" alt="CBG Fuel"/>
+        <div class="text">
+          <h2>Business Associates</h2>
+          
+        </div>
+      </div>
+       
+    </section>
+
+    <!-- Our Policy & Ethics-->
+    <section class="Ethics">
+      <div class="text-img-row">
+        <img src="image/ethics.jpeg" alt="CBG Fuel"/>
+        <div class="text">
+          <h2>Our Policy & Ethics</h2>
+          
+        </div>
+      </div>
+       
+    </section> 
+  </main>
+
+  <script>
+    console.log("Venturiq website loaded.");
+  </script>
+</body>
+</html>

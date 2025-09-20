@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venturiq</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #333;
+    }
+
+    /* Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    
+    header .logo span {
+      font-size: 22px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    header nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    header nav a:hover,
+    header nav a.active {
+      font-weight: bold;
+    }
+
+    /* Hero Slider */
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide .content {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      transform: translateY(-50%);
+      background: #fff;
+      padding: 20px;
+      max-width: 350px;
+    }
+
+    .slide .content h2 {
+      color: #006400;
+      margin-bottom: 10px;
+    }
+
+    .arrows {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .arrows.left {
+      left: 20px;
+    }
+
+    .arrows.right {
+      right: 20px;
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px;
+      flex-wrap: wrap;
+    }
+
+    .about img {
+      width: 300px;
+      border-radius: 8px;
+    }
+
+    .about-text {
+      max-width: 500px;
+      margin-left: 20px;
+    }
+
+    .about-text h2 {
+      margin-bottom: 10px;
+    }
+
+    .vision {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px;
+      flex-wrap: wrap;
+      background: #f9f9f9;
+    }
+
+    .vision img {
+      width: 350px;
+      border-radius: 8px;
+    }
+
+    .vision-text {
+      max-width: 500px;
+    }
+
+    .vision-text h2 {
+      margin-bottom: 10px;
+    }
+
+     .mission {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px;
+      flex-wrap: wrap;
+      background: #f9f9f9;
+    }
+
+    .mission img {
+      width: 350px;
+      border-radius: 8px;
+    }
+
+    .mission-text {
+      max-width: 500px;
+    }
+
+    .mission-text h2 {
+      margin-bottom: 10px;
+    }
+
+    .values {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px;
+      flex-wrap: wrap;
+      background: #f9f9f9;
+    }
+
+    .values img {
+      width: 350px;
+      border-radius: 8px;
+    }
+
+    .values-text {
+      max-width: 500px;
+    }
+
+    .values-text h2 {
+      margin-bottom: 10px;
+    }
+
+        .director {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px;
+      flex-wrap: wrap;
+      background: #f9f9f9;
+    }
+
+    .director img {
+      width: 350px;
+      border-radius: 8px;
+    }
+
+    .director-text {
+      max-width: 500px;
+    }
+
+    .director-text h2 {
+      margin-bottom: 10px;
+    }
+
+    .leadership {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px;
+      flex-wrap: wrap;
+      background: #f9f9f9;
+    }
+
+    .leadership img {
+      width: 350px;
+      border-radius: 8px;
+    }
+
+    .leadership-text {
+      max-width: 500px;
+    }
+
+    .leadership h2 {
+      margin-bottom: 10px;
+    }
+
+     .conduct {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px;
+      flex-wrap: wrap;
+      background: #f9f9f9;
+    }
+
+    .conduct img {
+      width: 350px;
+      border-radius: 8px;
+    }
+
+    .conduct-text {
+      max-width: 500px;
+    }
+
+    .conduct-text h2 {
+      margin-bottom: 10px;
+    }
+
+    .updates {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px;
+      flex-wrap: wrap;
+      background: #f9f9f9;
+    }
+
+    .updates img {
+      width: 350px;
+      border-radius: 8px;
+    }
+
+    .updates-text {
+      max-width: 500px;
+    }
+
+    .updates h2 {
+      margin-bottom: 10px;
+    }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+  }
+
+  .dropdown-menu li {
+    border-bottom: 1px solid #eee;
+  }
+
+  .dropdown-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    white-space: nowrap;
+  }
+
+  .dropdown-menu a:hover {
+    background: #f8f9fa;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <!-- Replace this logo link with your own logo file (e.g., logo.png in same folder) -->
+      <img src="image/logo.jpeg" alt="Venturiq Logo">
+      <div class="Venturiq"></div>
+      <span>Venturiq</span>
+    </div>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="group.html">Venturiq Group</a>
+      <a href="technology.html">Technology Partners</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="gallery.html" class="dropdown">Gallery</a>
+      <ul class="dropdown-menu">
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="#">Videos</a></li>
+      </ul>
+      <a href="#">Career</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Slider -->
+  <div class="slider">
+    <div class="slide active" style="background-image: url('image/WhatsApp Image 2025-09-19 at 1.26.24 AM.jpeg');">
+    </div>
+    <div class="slide" style="background-image: url('image/WhatsApp Image 2025-09-19 at 1.26.26 AM.jpeg');">
+      <div class="content">
+        <h2>GREEN ENERGY FUTURE</h2>
+        <p>Innovating to transform the energy landscape for a sustainable tomorrow.</p>
+      </div>
+    </div>
+    <span class="arrows left" onclick="prevSlide()">&#10094;</span>
+    <span class="arrows right" onclick="nextSlide()">&#10095;</span>
+  </div>
+
+  <!-- About Us -->
+  <section class="about">
+    <img src="image/about.jpg" alt="About">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p><strong>Who We Are</strong></p>
+      <p>We are a forward-thinking clean energy company dedicated to driving India's transition towards a sustainable future through the development and implementation of Bio-CNG (Compressed Natural Gas from biomass) projects. With a sharp focus on innovation, reliability, and environmental stewardship, we specialize in delivering end-to-end turnkey solutions for Bio-CNG plants nationwide.
+Our expertise spans the entire project lifecycle—from conceptualization, design, engineering, procurement, and construction, to commissioning and operations support. Leveraging cutting-edge technologies and a skilled multidisciplinary team, we ensure our clients receive efficient, cost-effective, and future-ready Bio-CNG infrastructure tailored to their specific needs.<br>
+We work closely with stakeholders across the public and private sectors, aligning with national sustainability goals and contributing to a cleaner, greener, and energy-secure India.</p>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="vision">
+    <div class="vision-text">
+      <h2>Vision</h2>
+      <p>To be the leading force in delivering sustainable energy infrastructure by providing world class project management solutions for renewable energy projects. We envision the future when clean energy is accessible, efficient and scalable driven by our commitment to innovation, environment responsibility and operational excellence.</p>
+    </div>
+    <img src="image/vision.jpg" alt="Vision">
+  </section>
+
+   <!-- Mission -->
+  <section class="mission">
+    <img src="image/mission.jpg" alt="mission">
+    <div class="about-text">
+      <h2>Mission</h2>
+      <p>To develop and deliver cost effective, safe and clean solutions that will maximize prosperity of our customers to be a responsible corporate citizen.</p>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="values">
+    <div class="values-text">
+      <h2>Core Values</h2>
+      <p><strong>Integrity</strong>– we will conduct business fairly and be transparent in al our interactions.
+                    We will adhere to the regulatory frame work and maintain client confidentiality.<br>
+                <strong>Innovation</strong> – we will be forward thinking in creating value for the world and business for our customers<br>
+                <strong>Passion</strong> – it will be our dedicated endeavor to improve quality of our life. We will constantly seek and build excellance in our offerings.<br>
+                <strong>Responsibility</strong> – We will always deliver on our promise,Through our business interaction, social intiatives we will strive to be recognized as benchmark for the industry.<br></p>
+    </div>
+    <img src="image/values.jpg" alt="Vision">
+  </section>
+
+  <!-- Board of directors -->
+  <section class="director">
+    <img src="image/director.jpg" alt="Vision">
+    <div class="driector-text">
+      <h2>Board of Directors</h2>
+      <p>Sudhir Mahadev Phadke </p>
+    </div>
+  </section>
+
+   <!-- Our Leadership -->
+  <section class="leadership">
+    <div class="leadership-text">
+      <h2>Our Leadership</h2>
+      <p></p>
+    </div>
+    <img src="image/leadership.jpg" alt="leadership">
+  </section>
+
+   <!-- Code of Conduct for Management -->
+  <section class="conduct">
+    <img src="image/code of conduct.jpg" alt="conduct">
+    <div class="conduct-text">
+      <h2>Code of Conduct for Management</h2>
+      <p>The code of conduct sets out the principles and standards of behaviour we expect of members when they perform their professional duties. All members are required to uphold the standards set out in the code and to maintain the reputation of the institute by implementing and observing its requirements.<br>
+      The code applies to all members irrespective of their category, the role they fulfil or where they are employed. It governs the conduct of the individual rather than specific activities. </p>
+    </div>
+  </section>
+
+  <!-- Ministry Updates -->
+  <section class="updates">
+    <div class="updates-text">
+      <h2>Ministry Updates</h2>
+      <p></p>
+    </div>
+    <img src="image/updates.jpg" alt="updates">
+  </section>
+
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[i].classList.add('active');
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    }
+
+    setInterval(nextSlide, 5000); // Auto change every 5 sec
+  </script>
+</body>
+</html>
